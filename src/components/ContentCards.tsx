@@ -12,7 +12,7 @@ function ContentCards() {
   ];
 
   const achievements = [
-    '🏆 Company of the Year Competition Winner (Panthera)',
+    '🏆 Company of the Year Competition Award Winner (Panthera)',
     '👥 Led cross-functional teams of 5+ developers',
     '📈 Increased traffic engagement by 30% at Loads of Traffic',
     '🎓 Maintaining First-Class Honours at Loughborough University',

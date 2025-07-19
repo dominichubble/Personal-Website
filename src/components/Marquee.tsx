@@ -170,13 +170,13 @@ export default function MarqueeDemo() {
 
   return (
     <motion.div 
-      className="bg-background p-8 flex flex-col gap-8 items-center justify-center"
+      className="bg-background py-8 flex flex-col gap-8 items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="w-full max-w-3xl space-y-8">
+      <div className="w-full space-y-8">
         <div className="space-y-2">
           <motion.h2 
             className="text-2xl font-semibold text-center text-foreground mb-6"
