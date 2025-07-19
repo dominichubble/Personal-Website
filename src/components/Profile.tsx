@@ -2,7 +2,7 @@ function Profile() {
   return (
     <div className="text-center mb-12">
       <img 
-        src="/assets/pfp.jpeg" 
+        src="public/assets/pfp.jpeg" 
         alt="Dominic Hubble" 
         className="w-32 h-32 rounded-full mx-auto mb-6 shadow-xl border-4 border-white object-cover"
       />
