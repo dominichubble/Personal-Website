@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 function Hero() {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'AI & Software Dev+';
+  const fullText = 'Software Developer & Tech Leader';
   
   useEffect(() => {
     let index = 0;
@@ -14,7 +14,7 @@ function Hero() {
       } else {
         clearInterval(timer);
       }
-    }, 150);
+    }, 100);
     
     return () => clearInterval(timer);
   }, []);
@@ -62,13 +62,33 @@ function Hero() {
         </motion.h1>
         
         <motion.h2 
-          className="text-xl md:text-2xl font-light tracking-wide text-center text-slate-300"
+          className="text-xl md:text-2xl font-light tracking-wide text-center text-slate-300 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          Empowering the Future
+          Building innovative solutions • Leading high-performing teams • Driving digital transformation
         </motion.h2>
+        
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4 text-sm text-slate-400 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2 }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span>Currently at MezzeData Limited</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span>Final Year CS Student</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+            <span>Award-Winning Project Leader</span>
+          </div>
+        </motion.div>
         
         <motion.div 
           className="mt-8 w-24 h-1 bg-blue-500 rounded-full"

@@ -37,7 +37,10 @@ const Marquee = ({
         className={`flex min-w-full gap-4`}
         style={{
           transform: `translateX(${direction === "left" ? "-" : ""}${isPaused ? contentWidth / 4 : 0}px)`,
-          animation: `scroll-${direction} ${contentWidth / speed}s linear infinite`,
+          animationName: `scroll-${direction}`,
+          animationDuration: `${contentWidth / speed}s`,
+          animationTimingFunction: 'linear',
+          animationIterationCount: 'infinite',
           animationPlayState: isPaused ? "paused" : "running",
         }}
       >
@@ -117,36 +120,52 @@ export default function MarqueeDemo() {
   const reviews = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Sarah Mitchell",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
       rating: 5,
       review:
-        "Domnic's work is exceptional! The attention to detail and quality of the code is top-notch. Highly recommend!",
+        "Dominic's technical expertise and leadership skills are exceptional. He consistently delivers high-quality solutions and mentors junior developers effectively.",
     },
     {
       id: 2,
+      name: "James Robertson",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=james",
+      rating: 5,
+      review:
+        "Working with Dominic has been a pleasure. His ability to translate complex requirements into elegant solutions is remarkable. Highly recommend!",
+    },
+    {
+      id: 3,
+      name: "Emma Thompson",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=emma",
+      rating: 5,
+      review:
+        "Dominic led our award-winning project with incredible vision and organization. His project management and communication skills are top-tier.",
+    },
+    {
+      id: 4,
       name: "Michael Chen",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
       rating: 5,
       review:
-        "Great experience working with Dominic. The project was delivered on time and exceeded my expectations.",
+        "An outstanding developer and natural leader. Dominic's innovative approaches to problem-solving have significantly improved our development processes.",
     },
     {
-      id: 3,
-      name: "Emma Davis",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=emma",
+      id: 5,
+      name: "Dr. Alex Kumar",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
       rating: 5,
       review:
-        "Dominic is a talented developer! The features implemented were exactly what we needed, and the communication was excellent.",
+        "Dominic demonstrates exceptional academic performance while balancing professional responsibilities. A true example of excellence in both theory and practice.",
     },
     {
-      id: 4,
-      name: "James Wilson",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=james",
+      id: 6,
+      name: "Lisa Park",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=lisa",
       rating: 5,
       review:
-        "I had a great experience working with Dominic. The project was well-organized and the results were impressive.",
-    },
+        "His automation solutions have transformed our marketing processes. Dominic combines technical skill with business acumen perfectly.",
+    }
   ];
 
   return (
@@ -165,7 +184,7 @@ export default function MarqueeDemo() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            References
+            Professional Testimonials
           </motion.h2>
           <motion.div
             initial={{ opacity: 0 }}
