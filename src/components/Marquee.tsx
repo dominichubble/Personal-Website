@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -70,27 +71,45 @@ interface ReviewCardProps {
 }
 
 const ReviewCard = ({ avatar, name, rating, review }: ReviewCardProps) => (
-  <div className="w-80 p-4 bg-card rounded-lg border border-border shadow-sm">
+  <motion.div 
+    className="w-80 p-4 bg-card rounded-lg border border-border shadow-sm"
+    whileHover={{ 
+      y: -5,
+      scale: 1.02,
+      transition: { type: "spring", stiffness: 300 }
+    }}
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.3 }}
+  >
     <div className="flex items-center gap-3 mb-3">
-      <img
+      <motion.img
         src={avatar}
         alt={name}
         className="w-10 h-10 rounded-full object-cover"
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 400 }}
       />
       <div>
         <h3 className="font-medium text-foreground">{name}</h3>
         <div className="flex gap-0.5">
           {Array.from({ length: 5 }).map((_, i) => (
-            <Star
+            <motion.div
               key={i}
-              className={`w-4 h-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground"}`}
-            />
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.1, duration: 0.3 }}
+            >
+              <Star
+                className={`w-4 h-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground"}`}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
     </div>
     <p className="text-sm text-muted-foreground">{review}</p>
-  </div>
+  </motion.div>
 );
 
 // Demo Component
@@ -131,25 +150,42 @@ export default function MarqueeDemo() {
   ];
 
   return (
-    <div className="bg-background p-8 flex flex-col gap-8 items-center justify-center">
+    <motion.div 
+      className="bg-background p-8 flex flex-col gap-8 items-center justify-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="w-full max-w-3xl space-y-8">
         <div className="space-y-2">
-          <h2 className="text-2xl font-semibold text-center text-foreground mb-6">
+          <motion.h2 
+            className="text-2xl font-semibold text-center text-foreground mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             References
-          </h2>
-          <Marquee direction="left" className="py-4" speed={30}>
-            {reviews.map((review) => (
-              <ReviewCard
-                key={review.id}
-                avatar={review.avatar}
-                name={review.name}
-                rating={review.rating}
-                review={review.review}
-              />
-            ))}
-          </Marquee>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <Marquee direction="left" className="py-4" speed={30}>
+              {reviews.map((review) => (
+                <ReviewCard
+                  key={review.id}
+                  avatar={review.avatar}
+                  name={review.name}
+                  rating={review.rating}
+                  review={review.review}
+                />
+              ))}
+            </Marquee>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
