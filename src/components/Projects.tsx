@@ -16,15 +16,15 @@ function Projects() {
   const projects: Project[] = [
     {
       id: 'mezzedata-platform',
-      title: 'MezzeData Analytics Platform',
-      description: 'Developing a comprehensive data analytics platform for business intelligence and reporting.',
-      technologies: ['React', 'TypeScript', 'Node.js', 'SQL', 'REST APIs'],
+      title: 'Community Information App',
+      description: 'Developing a Flutter-based mobile application for local residents to access community news, events, dining options, and local government information.',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'REST APIs', 'Mobile Development'],
       status: 'In Progress',
       type: 'Professional',
       highlights: [
-        '⚡ Improved data processing efficiency by 40%',
-        '📊 Implemented real-time dashboard functionality',
-        '👥 Led frontend development team of 3 developers'
+        '📱 Building mobile app for community engagement',
+        '📰 Implementing news and events management system',
+        '🏛️ Connecting residents with local commissioners and services'
       ]
     },
     {
@@ -147,9 +147,11 @@ function Projects() {
               transition: { type: "spring", stiffness: 300 }
             }}
           >
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
-              <div className="flex gap-2">
+            <div className="mb-4">
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-semibold text-gray-800 flex-1 pr-4">{project.title}</h3>
+              </div>
+              <div className="flex gap-2 flex-wrap">
                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeColor(project.type)}`}>
                   {project.type}
                 </span>
