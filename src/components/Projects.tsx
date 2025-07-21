@@ -71,9 +71,6 @@ function Projects() {
     }
   ];
 
-  console.log('Projects array length:', projects.length);
-  console.log('All project ids:', projects.map(p => p.id));
-
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
       case 'Completed': return 'bg-green-100 text-green-800';
@@ -135,8 +132,7 @@ function Projects() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {projects.map((project, index) => {
-          console.log(`Rendering project ${index + 1}:`, project.title);
+        {projects.map((project) => {
           return (
           <motion.div
             key={project.id}
