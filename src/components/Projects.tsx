@@ -22,54 +22,57 @@ function Projects() {
       status: 'In Progress',
       type: 'Professional',
       highlights: [
-        'Improved data processing efficiency by 40%',
-        'Implemented real-time dashboard functionality',
-        'Led frontend development team of 3 developers'
+        '⚡ Improved data processing efficiency by 40%',
+        '📊 Implemented real-time dashboard functionality',
+        '👥 Led frontend development team of 3 developers'
       ]
     },
     {
       id: 'panthera-app',
       title: 'Panthera Student Lifestyle App',
-      description: 'Award-winning student lifestyle application that won Company of the Year Competition.',
-      technologies: ['React Native', 'JavaScript', 'Firebase', 'Node.js'],
+      description: 'Award-winning student lifestyle application that won several awards at the national level.',
+      technologies: ['React Native', 'JavaScript'],
       status: 'Completed',
       type: 'Academic',
       highlights: [
-        '🏆 Won Company of the Year Competition',
-        '👑 Received Leadership Award',
+        '🏆 Won Several Competition Awards',
+        '👑 Received Inspirational Leader Award',
         '🎯 Achieved Companies Choice Award',
-        'Led team of 6 developers for 10 months'
+        '💻 Led team of 4 developers for 10 months'
       ],
-      link: 'https://www.linkedin.com/company/panthera/'
+      link: 'https://www.instagram.com/p/CbuKdeLqJZP/'
     },
     {
       id: 'traffic-automation',
       title: 'Marketing Automation Tools',
       description: 'Developed Python automation tools for affiliate marketing and competitor analysis.',
-      technologies: ['Python', 'VBA', 'Data Analysis', 'Web Scraping', 'APIs'],
+      technologies: ['Python', 'Sentiment Analysis', 'Data Analysis', 'Web Scraping', 'APIs'],
       status: 'Completed',
       type: 'Professional',
       highlights: [
-        'Increased traffic engagement by 30%',
-        'Automated 80% of repetitive marketing tasks',
-        'Built comprehensive competitor intelligence system'
+        '📈 Increased traffic engagement by 30%',
+        '🤖 Automated 80% of repetitive marketing tasks',
+        '🔍 Built comprehensive competitor intelligence system'
       ]
     },
     {
-      id: 'personal-website',
-      title: 'Personal Portfolio Website',
-      description: 'Modern, responsive portfolio website built with React and advanced animations.',
-      technologies: ['React', 'TypeScript', 'Framer Motion', 'Tailwind CSS', 'Vite'],
+      id: 'productivity-platform',
+      title: 'Productivity Platform',
+      description: 'Modern, responsive platform built with React, MySQL, and Bootstrap. Built with a team of 6 other developers.',
+      technologies: ['Scrum', 'React', 'TypeScript', 'MySQL', 'Bootstrap', 'PHPMyAdmin', 'Google Cloud'],
       status: 'Completed',
-      type: 'Personal',
+      type: 'Academic',
       highlights: [
-        'Fully responsive design',
-        'Advanced animations and interactions',
-        'Optimized for performance and SEO'
+        '👨‍💼 Leading a team of 6 developers using Agile methodologies',
+        '📱 Fully responsive design',
+        '✨ Implemented user-friendly interfaces and experiences'
       ],
-      github: 'https://github.com/dominichubble/Personal-Website'
+      link: 'https://www.linkedin.com/posts/dominichubble_another-exciting-and-challenging-phase-of-activity-7299509157802504193-cAgA?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADhuLNIBIHLbwP6xLKdQUupQj83tti8Rql0'
     }
   ];
+
+  console.log('Projects array length:', projects.length);
+  console.log('All project ids:', projects.map(p => p.id));
 
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
@@ -132,7 +135,9 @@ function Projects() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => {
+          console.log(`Rendering project ${index + 1}:`, project.title);
+          return (
           <motion.div
             key={project.id}
             className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
@@ -167,7 +172,6 @@ function Projects() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + idx * 0.1, duration: 0.3 }}
                   >
-                    <span className="text-green-500 mt-1">•</span>
                     <span>{highlight}</span>
                   </motion.li>
                 ))}
@@ -227,7 +231,8 @@ function Projects() {
               </div>
             )}
           </motion.div>
-        ))}
+        );
+        })}
       </motion.div>
     </motion.div>
   );
