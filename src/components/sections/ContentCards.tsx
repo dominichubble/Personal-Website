@@ -1,24 +1,7 @@
 import { motion } from 'framer-motion';
+import { achievements, softSkills, technicalSkills } from '../../data/skills';
 
 function ContentCards() {
-  const technicalSkills = [
-    'React', 'TypeScript', 'JavaScript', 'Python', 'Node.js', 'HTML/CSS',
-    'Git/GitHub', 'SQL', 'MongoDB', 'RESTful APIs', 'Machine Learning', 'AI/ML'
-  ];
-
-  const softSkills = [
-    'Project Management', 'Leadership', 'Team Collaboration', 'Problem Solving',
-    'Communication', 'Agile/Scrum', 'Critical Thinking', 'Mentoring'
-  ];
-
-  const achievements = [
-    '🏆 Company of the Year Competition Award Winner (Panthera)',
-    '👥 Led cross-functional teams of 5+ developers',
-    '📈 Increased traffic engagement by 30% at Loads of Traffic',
-    '🎓 Maintaining First-Class Honours at Loughborough University',
-    '💼 Currently employed while studying full-time'
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -178,8 +161,8 @@ function ContentCards() {
               transition={{ delay: 0.6 + index * 0.1, duration: 0.3 }}
               whileHover={{ x: 5, transition: { type: "spring", stiffness: 400 } }}
             >
-              <span className="text-xs mt-1">•</span>
-              <span>{achievement}</span>
+              <span className="text-xs mt-1">{achievement.icon}</span>
+              <span>{achievement.description}</span>
             </motion.div>
           ))}
         </motion.div>

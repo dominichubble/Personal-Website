@@ -1,12 +1,12 @@
-import CallToAction from './components/CallToAction';
-import ContentCards from './components/ContentCards';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import MarqueeDemo from './components/Marquee';
-import Profile from './components/ProfileSimple';
-import Projects from './components/Projects';
-import ScrollToTop from './components/ScrollToTop';
-import Timeline from './components/Timeline';
+import CallToAction from './components/sections/CallToAction';
+import ContentCards from './components/sections/ContentCards';
+import Footer from './components/sections/Footer';
+import Hero from './components/sections/Hero';
+import MarqueeDemo from './components/sections/Marquee';
+import Projects from './components/sections/Projects';
+import Timeline from './components/sections/Timeline';
+import Profile from './components/ui/ProfileSimple';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   return (
