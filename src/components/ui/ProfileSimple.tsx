@@ -66,7 +66,7 @@ function Profile() {
         </a>
         
         <a 
-          href="mailto:dominic@example.com"
+          href="mailto:dominichubble@gmail.com"
           className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition-colors duration-300 font-medium flex items-center gap-2"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ function Profile() {
         </a>
         
         <a 
-          href="/resume.pdf"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-500 transition-colors duration-300 font-medium flex items-center gap-2"

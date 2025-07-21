@@ -167,7 +167,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - 🌐 [Portfolio](https://dominichubble.github.io/Personal-Website/)
 - 💼 [LinkedIn](https://www.linkedin.com/in/dominichubble/)
 - 🐙 [GitHub](https://github.com/dominichubble)
-- 📧 [Email](mailto:dominic.hubble@outlook.com)
+- 📧 [Email](mailto:dominichubble@gmail.com)
 
 ---
 
