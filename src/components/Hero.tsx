@@ -20,7 +20,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className="relative bg-slate-800 text-white overflow-hidden">
+    <div className="relative bg-slate-800 text-white overflow-hidden min-h-screen">
       {/* Animated background particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -46,7 +46,7 @@ function Hero() {
         ))}
       </div>
       
-      <div className="relative flex flex-col items-center justify-center py-20 px-4">
+      <div className="relative flex flex-col items-center justify-center min-h-screen py-20 px-4">
         <motion.h1 
           className="text-5xl md:text-7xl font-bold tracking-tight text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
