@@ -1,4 +1,3 @@
-import CallToAction from './components/sections/CallToAction';
 import ContentCards from './components/sections/ContentCards';
 import Footer from './components/sections/Footer';
 import Hero from './components/sections/Hero';
@@ -21,9 +20,9 @@ function App() {
         <MarqueeDemo />
         <Timeline />
       </div>
-      
-      <CallToAction />
-      
+
+      {/* <CallToAction /> */}
+
       <Footer />
       <ScrollToTop />
     </div>
